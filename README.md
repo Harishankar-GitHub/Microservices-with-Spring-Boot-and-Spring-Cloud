@@ -45,6 +45,13 @@
 		* git add -A
 		* git status
 		* git commit -m "first commit"
+	*  Steps to fetch config values from a Github Repository URL
+		* Add the below properties in application.properties of Spring Cloud Config Server.
+		* spring.cloud.config.server.git.uri=Any Git Repository URL that has the configuration files
+		* spring.cloud.config.server.git.username=Username of the Git Repository
+		* spring.cloud.config.server.git.password=Password of the Git Repository
+	* NOTE : If config values in Git Repository (Local Repository or Git URL) is modified
+			, then hit POST - http://localhost:8080/actuator/bus-refresh from Postman to refresh and get the updated values from config files.
 ##### Currency Exchange Service
 	* Port : 8000, 8001, 8002, ...
 ##### Currency Conversion Service
