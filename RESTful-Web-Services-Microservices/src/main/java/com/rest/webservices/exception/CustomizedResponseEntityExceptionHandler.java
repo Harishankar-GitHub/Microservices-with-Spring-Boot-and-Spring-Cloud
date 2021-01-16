@@ -27,7 +27,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 	public final ResponseEntity<Object> handleAllException(Exception ex, WebRequest request)
 	{
 		ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
-		return new ResponseEntity(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	// http://localhost:8080/users/40
@@ -35,7 +35,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 	public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest request)
 	{
 		ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
-		return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.NOT_FOUND);
 	}
 	
 	@Override
@@ -44,6 +44,6 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 	{
 		ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(), "Validation failed", ex.getBindingResult().toString());
 		// ex.getBindingResult().toString() is used to give the error message which comes from the validations.
-		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
 }
