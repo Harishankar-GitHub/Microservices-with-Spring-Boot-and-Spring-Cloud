@@ -97,3 +97,9 @@
 		* Netflix Zuul Api Gateway Server
 		* Currency Exchange Service
 		* Currency Conversion Service
+
+## Attribution
+
+This repository contains my notes and practice code from the *Microservices with Spring Boot and Spring Cloud* course by [in28minutes](https://www.in28minutes.com) (Ranga Karanam). The original course material, including its example code, belongs to its author.
+
+The [MIT license](LICENSE) in this repository applies only to my own notes, changes and additions, not to the original course material.
